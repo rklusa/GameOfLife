@@ -11,13 +11,15 @@
             Game gameOfLife = new Game(WIDTH, HEIGHT);
             gameOfLife.SeedGrid(WIDTH, HEIGHT);
             gameOfLife.DrawGrid(WIDTH, HEIGHT);
+            
             Console.WriteLine("Press any key to start simulation");
             Console.ReadLine();
+
             Console.Clear();
 
             for (int i = 0; i < generations; i++)
             {
-                gameOfLife.ApplyRules(WIDTH, HEIGHT);
+                gameOfLife.ApplyNeighbors(WIDTH, HEIGHT);
                 gameOfLife.DrawGrid(WIDTH, HEIGHT);
 
                 Console.WriteLine($"generation : {i + 1}");
